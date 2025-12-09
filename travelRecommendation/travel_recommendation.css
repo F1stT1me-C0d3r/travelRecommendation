@@ -12,15 +12,15 @@
  
 nav {
   background-color:  #0c0b0c;  
-  height: 60px;
-  padding-top: 30px;
+  height: 30px;
+  padding-top: 15px;
   padding-right: 5px;
 } 
 
 #goggle {
     display: flexbox;
     justify-content: right;
-    
+
 }
 
 @media print {
