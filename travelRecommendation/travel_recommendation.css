@@ -1,1 +1,60 @@
+ body {
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Full viewport height */
+            background-image: url('https://images5.alphacoders.com/877/877099.jpg'); /* Path to your image */
+            background-size: cover; /* Scale image to cover entire area */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent tiling */
+            background-attachment: fixed; /* Keep image fixed during scroll */
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+ 
+nav {
+  background-color:  #0c0b0c;  
+  height: 60px;
+  padding-top: 30px;
+  padding-right: 5px;
+} 
+
+#goggle {
+    display: flexbox;
+    justify-content: right;
+
+}
+
+@media print {
+    .pagebreak {
+        break-after: page;        /* New standard */
+    }
+}
+
+h1 {
+    font: 20px; 
+    text-align: left;
+    text-emphasis-color: rgba(251, 244, 244, 0.847);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+    font: 0.5px;
+    text-emphasis-color: rgba(251, 244, 244, 0.847);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+}
+
+.iconbutton{
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  cursor: pointer;
+}
+
 
