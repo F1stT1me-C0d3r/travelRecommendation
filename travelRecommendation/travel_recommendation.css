@@ -1,5 +1,5 @@
  body {
-            margin: 0; /* Remove default margin */
+            margin: 2px; /* Remove default margin */
             height: 100vh; /* Full viewport height */
             background-image: url('https://images5.alphacoders.com/877/877099.jpg'); /* Path to your image */
             background-size: cover; /* Scale image to cover entire area */
@@ -20,13 +20,12 @@ nav {
 #goggle {
     display: flexbox;
     justify-content: right;
-
+    
 }
 
 @media print {
     .pagebreak {
-        break-after: always;        /* New standard */
-        break-inside: avoid;
+        break-before: always;        /* New standard */
     }
 }
 
