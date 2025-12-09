@@ -25,7 +25,8 @@ nav {
 
 @media print {
     .pagebreak {
-        break-after: page;        /* New standard */
+        break-after: always;        /* New standard */
+        break-inside: avoid;
     }
 }
 
