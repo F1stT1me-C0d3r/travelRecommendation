@@ -17,18 +17,30 @@ nav {
   padding-right: 5px;
 } 
 
+.menu {
+    color: lightgray;
+    margin: 0.5px;
+    padding: 5px;
+    font-size: 20px;
+    text-decoration:none; 
+}
+
+.topmenu:hover {
+    color: white;
+}
+
 #goggle {
     display: flexbox;
     justify-content: right;
 
 }
 
-@media print {
-    .pagebreak {
-        break-before: always;        /* New standard */
-    }
+.pagebreak {
+    break-before: always;        /* New standard */
+    break-inside: avoid;
 }
 
+   
 h1 {
     font: 20px; 
     text-align: left;
@@ -43,18 +55,10 @@ p {
     text-align: left;
 }
 
-.iconbutton{
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  right: 3%;
-  bottom: 3%;
-  cursor: pointer;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
-
-
