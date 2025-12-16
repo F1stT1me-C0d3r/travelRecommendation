@@ -29,7 +29,7 @@ nav {
     color: white;
 }
 
-#goggle {
+.goggle {
     display: flexbox;
     justify-content: right;
 
