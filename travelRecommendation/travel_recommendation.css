@@ -59,7 +59,7 @@ nav {
 }
 
 .search{
-    --padding: 14px;
+    --padding: 10px;
 
     width: max-content;
     display: flex;
@@ -68,7 +68,7 @@ nav {
     border-radius: 28px;
     background: #f6f6f6;
     width: 400px;
-    margin-right: 0;
+    margin-right: 5px;
 }
 
 .search form{
