@@ -36,11 +36,14 @@ nav {
     font-weight: bold;
 }
   
-.socials-container{
-    padding: 65px;
+.socials-container{    
     display: flex;
     gap: 20px;
-    text-align: left;
+    text-align: left;    
+}
+
+.socials-container ul{
+    padding: 20px;
     text-decoration: none;
     list-style: none;
 }
