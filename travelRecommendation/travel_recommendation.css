@@ -43,7 +43,7 @@ nav {
 }
 
 .socials-container ul{
-    padding: 20px;
+    padding: 30px;
     text-decoration: none;
     list-style: none;
 }
@@ -160,4 +160,38 @@ p {
     padding-left: 40px;
 }
 
+.all-teams{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  padding-left: 45px;
+}
+
+.team{
+    display: block;
+    padding: 2px;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    color: white; /* Text remains solid */
+    width: 1.5in;
+    font-size: 15px;
+    box-shadow: 0 3px 10px gray;
+    justify-content: center;
+}
+
+.team h2{
+    font-family: sans-serif;
+    font-size: 50px; 
+    text-align: left;
+}
+
+.team span{
+    background-color: #171d26;
+    color: #fff;
+    align-items: center;
+}
+
+.team span img{
+  height: 35px;
+  align-items: center;
+}
 
