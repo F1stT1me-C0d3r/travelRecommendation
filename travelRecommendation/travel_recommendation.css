@@ -40,15 +40,19 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding-top: 80px;
+    padding-top: 456px;
     gap: 20px;
+    width: 144.8px;
        
 }
 
-.socials-container ul{
-    padding: 100px;
+.socials-container ul{    
     text-decoration: none;
     list-style: none;
+}
+
+.socials-container ul li{
+    margin: 20px;
 }
 
 .socials-container a{
@@ -203,3 +207,20 @@ p {
   align-items: center;
 }
 
+.director-container{
+    margin: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.75); /* Black with 75% transparency */
+    color: white;
+    align-items: center;
+}
+
+.go-home{
+  justify-content: center;
+  color: #fff;
+}
