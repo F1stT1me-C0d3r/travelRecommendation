@@ -155,15 +155,6 @@ nav {
     padding-left: 120px;
 }
    
-h1 {
-    font-family: sans-serif;
-    font-size: 50px; 
-    text-align: left;
-    padding-top: 80px;
-    padding-left: 65px;
-    color: #fff;
-}
-
 p {
     font: 5px;
     text-emphasis-color: rgba(251, 244, 244, 0.847);
@@ -175,34 +166,51 @@ p {
 .all-teams{
   display: flex;
   flex-direction: row;
-  flex-flow: wrap;
+  flex-flow: wrap;  
   padding-left: 70px;
 }
 
-.team{
+.all-teams div{
+    margin: 25px;
     display: block;
-    padding: 2px;
+    padding: 50px;
     background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
     color: white; /* Text remains solid */
-    width: 1.5in;
+    height: 144px;
+    width: 180px;
     font-size: 15px;
     box-shadow: 0 3px 10px gray;
     justify-content: center;
 }
 
-.team h2{
+.all-teams h1{
+    font-family: sans-serif;
+    font-size: 100px; 
+    text-align: left;
+    color: #fff;
+}
+
+.all-teams h1 p{
+    font-family: sans-serif;
+    font-size: 25px; 
+    text-align: left;
+    align-items: center;
+    color: #fff;
+}
+
+.all-teams div h2{
     font-family: sans-serif;
     font-size: 50px; 
     text-align: left;
 }
 
-.team span{
+.all-teams div span{
     border-color: #171d26;
     color: #fff;
     align-items: center;
 }
 
-.team span img{
+.all-teams div span img{
   height: 35px;
   align-items: center;
 }
@@ -217,7 +225,7 @@ p {
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.75); /* Black with 75% transparency */
     color: white;
-    align-items: center;
+    align-content: center;
 }
 
 .go-home{
