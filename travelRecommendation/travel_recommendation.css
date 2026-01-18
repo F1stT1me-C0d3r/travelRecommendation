@@ -191,6 +191,7 @@ p {
 }
 
 .all-teams h1 p{
+    display: grid;
     font-family: sans-serif;
     font-size: 25px; 
     text-align: left;
