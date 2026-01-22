@@ -36,10 +36,9 @@ nav {
     font-weight: bold;
 }
   
-.socials-container{    
-    display: flex;    
-    justify-content: flex-start;
-    padding-top: 456px;
+.socials-container{ 
+    float: left;
+    padding-top: 480px;
     gap: 20px;
     width: 144.8px;
        
@@ -149,8 +148,9 @@ nav {
 }
 
 main{
-    display: flex;
-    justify-content: center;
+    padding-top: 80px;
+    padding-left: 80px;
+    float: inline-start;
 }
 
 main h1{   
@@ -167,19 +167,13 @@ main p{
     color: #fff;
 }
 
+
+
 .text{
     display: flex;
     flex-wrap: wrap;
     padding-left: 120px;
-}
-   
-p {
-    font: 5px;
-    text-emphasis-color: rgba(251, 244, 244, 0.847);
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
-    padding-left: 40px;
-}
+}  
 
 .all-teams{
   display: flex;
