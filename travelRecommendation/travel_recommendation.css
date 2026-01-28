@@ -167,6 +167,31 @@ main p{
     color: #fff;
 }
 
+main h2{
+    display: flex;
+    justify-content: center;
+}
+
+.headerSet{
+    margin-top: 350px;
+    padding-left: 80px;
+    float: inline-start;
+}
+
+.headerSet h1{
+    font-family: sans-serif;
+    font-size: 100px; 
+    text-align: left;
+    color: #fff;
+}
+
+.headerSet p{
+    font-family: sans-serif;
+    font-size: 19px; 
+    text-align: left;
+    color: #fff;
+}
+
 .bookNow{
     margin: 25px;
     padding-top: 10px;
@@ -180,11 +205,57 @@ main p{
     cursor: pointer;
 }
 
+.contactInput{
+    margin-top: 300px;
+    margin-left: 100px;
+    float: left;       
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    color: white; /* Text remains solid */
+    font-size: 19px;
+    height: 600px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactInput input{
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    color: white; /* Text remains solid */
+    width: 99%;
+    height: 5%;     
+}
+
+.contactInput textarea{
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+    color: white; /* Text remains solid */
+    width: 99%; 
+}
+
+.contactInput button{
+    padding: 10px;
+    background-color: #0796a0ef;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 19px;
+    cursor: pointer;
+    width: 99%;
+    height: 5.5%;
+    float: inline-end;     
+}
+
+.contactInput button:hover{
+    background-color: #011211;
+}
+
+
 .bookNow:hover{
     background-color: #011211;
 }
 
 .textDecoration{    
+    padding: 15px;
     background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
     color: white; /* Text remains solid */
 }
@@ -243,6 +314,7 @@ main p{
     background-color: rgba(0, 0, 0, 0.75); /* Black with 75% transparency */
     color: white;
     align-content: center;
+    outline: #fff;
 }
 
 .go-home{
