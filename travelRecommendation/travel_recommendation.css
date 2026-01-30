@@ -323,9 +323,29 @@ main h2{
   color: #fff;
 }
 
-.location-cards{
-    float: inline-end;
+.location-cards{    
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    margin-top: 60px;
+    gap: 0.25rem;
+}
+
+.card{
+    width: 290px;
+    border-radius: 0px 0px 10px 10px;    
+    background-color: #ffffff;
+    color: #011211;
+    margin-top: 0px;
+    padding: 5px;    
+}
+.card > .name{
+    font-weight: bold;
+}
+.card > .description{
+    font-size: 0.5rem;
+    color: #01121183;
+}
+
+.hide{
+    display: none;
 }
