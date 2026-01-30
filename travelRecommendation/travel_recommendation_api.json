@@ -3,7 +3,7 @@
       {
         "id": 1,
         "name": "Republic of Maldives",
-        "Islands": [
+        "cities": [
           {
             "name": "Rasdhoo, Republic of Maldives",
             "imageUrl": "Rasdhoo.jpg",
