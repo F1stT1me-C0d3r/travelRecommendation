@@ -6,12 +6,12 @@
         "cities": [
           {
             "name": "Rasdhoo, Republic of Maldives",
-            "imageUrl": "Rasdhoo.jpg",
+            "imageUrl": "https://whereismaldives.com/wp-content/uploads/2021/05/Rasdhoo-aerial.jpg",
             "description": "A vibrant island known for snorkeling with sharks and vibrant coral reefs."
           },
           {
             "name": "Ukulhas, Republic of Maldives",
-            "imageUrl": "Ukulhas.jpg",
+            "imageUrl": "https://www.whereismaldives.com/wp-content/uploads/2021/05/Ukulhas-aerial.jpg",
             "description": "A cultural hub famous for its local amenities and excellent diving opportunities."
           }
         ]
@@ -22,12 +22,12 @@
         "cities": [
           {
             "name": "Tokyo, Japan",
-            "imageUrl": "tokyo.jpg",
+            "imageUrl": "https://images2.alphacoders.com/947/947089.jpg",
             "description": "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."
           },
           {
             "name": "Kyoto, Japan",
-            "imageUrl": "kyoto.jpg",
+            "imageUrl": "https://images.unsplash.com/photo-1602764363500-e8e8455de955?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGt5b3RvfGVufDB8fDB8fHww",
             "description": "Known for its historic temples, gardens, and traditional tea houses."
           }
         ]
@@ -38,12 +38,12 @@
         "cities": [
           {
             "name": "Rio de Janeiro, Brazil",
-            "imageUrl": "rio.jpg",
+            "imageUrl": "https://th.bing.com/th/id/R.f40908d9f9d2d6f16da0f559f8de7966?rik=mPIk9iSJyJasag&pid=ImgRaw&r=0",
             "description": "A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks."
           },
           {
             "name": "São Paulo, Brazil",
-            "imageUrl": "sao-paulo.jpg",
+            "imageUrl": "https://images.pexels.com/photos/3852288/pexels-photo-3852288.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
             "description": "The financial hub with diverse culture, arts, and a vibrant nightlife."
           }
         ]
@@ -53,13 +53,13 @@
       {
         "id": 1,
         "name": "Angkor Wat, Cambodia",
-        "imageUrl": "angkor-wat.jpg",
+        "imageUrl": "https://images.pexels.com/photos/15929096/pexels-photo-15929096/free-photo-of-clear-sky-over-angkor-wat.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         "description": "A UNESCO World Heritage site and the largest religious monument in the world."
       },
       {
         "id": 2,
         "name": "Taj Mahal, India",
-        "imageUrl": "taj-mahal.jpg",
+        "imageUrl": "https://cdn.pixabay.com/photo/2020/09/14/11/50/taj-mahal-5570765_1280.jpg",
         "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
       }
     ],
@@ -67,13 +67,13 @@
       {
         "id": 1,
         "name": "Bora Bora, French Polynesia",
-        "imageUrl": "bora-bora.jpg",
+        "imageUrl": "https://cdn.pixabay.com/photo/2017/12/16/22/22/bora-bora-3023437_1280.jpg",
         "description": "An island known for its stunning turquoise waters and luxurious overwater bungalows."
       },
       {
         "id": 2,
         "name": "Copacabana Beach, Brazil",
-        "imageUrl": "copacabana.jpg",
+        "imageUrl": "https://image.freepik.com/free-photo/aerial-image-copacabana-beach-rio-de-janeiro-brazil_63135-638.jpg",
         "description": "A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views."
       }
     ]
