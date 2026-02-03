@@ -1,12 +1,12 @@
-const userCardTemplate = document.querySelector("[data-user-template]");
+const userCardTemplate = document.querySelector("#data-user-template");
+console.log(userCardTemplate)
+
+const userCardContainer = document.querySelector("[data-user-cards-container]");
 
 fetch('./travel_recommendation_api.json')
  .then(res => res.json())
- .then(data => showInfo(data));
- 
- function showInfo(data){
-    console.table(data.beaches);
- }
+ .then(data => {  
+    const card = userCardTemplate.cloneNode(true).textContent
+    console.log(card)    
+});
 
- 
- 
