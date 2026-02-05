@@ -23,8 +23,8 @@
                             <span class="search-icon material-symbols-outlined">
                                 search
                                 </span>
-                            <button type="button" onclick="search()">Search</button>
-                            <button type="button" onclick="clear()">Clear</button>
+                            <button type="button" id="search">Search</button>
+                            <button type="button" id="clear">Clear</button>
                         </div>
                     </form>
                 </ul>              
@@ -56,13 +56,13 @@
             <button type="button" class="bookNow"">Book Now</button>
         </main>
         
-        <div class="topic" data-user-cards-container>
-            <template data-user-template>
+        <div>
+            <template>
                 <div class="location-cards">
-                    <div class="imageURL" data-user-image></div>
-                    <div class="card">                                
-                        <div class="name" data-user-name></div>
-                        <div class="description" data-user-description></div>
+                    <div class="imageURL" id="image"></div>
+                    <div class="card" id="view-card">                                
+                        <div class="name" id="card-name"></div>
+                        <div class="description" id="card-description"></div>
                     </div>
                 </div>    
             </template>
