@@ -43,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
  .then(res => res.json())
  .then(data => {
     const templateCard = document.querySelector('#template-card');
-    templateCard.innerHTML = `<h2>Weather in ${data.name}</h2>
-                            <p>Temperature: ${data.main.temp} &#8451;</p>
-                            <p>Weather: ${data.weather[0].description}</p>`
+    templateCard.innerHTML = `
 
                             <div class="location-cards" id="template-card">
                                 <div class="imageURL">${data.countries[0].cities[0].imageUrl}</div>
