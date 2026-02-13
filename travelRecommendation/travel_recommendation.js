@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
     // Optional: Handle search button click
     if (searchButton) {
         searchButton.addEventListener('click', () => {
@@ -47,24 +48,73 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>Weather: ${data.weather[0].description}</p>`
 
                             <div class="location-cards" id="template-card">
-                            <div class="imageURL">${data.[0].imageUrl}</div>
-                            <div class="card">                                
-                                <div class="name">${data.[0].name}</div>
-                                <div class="description">${data.[0].description}</div>
-                            </div>
-                            </div>            
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.[1].imageUrl}</div>
+                                <div class="imageURL">${data.countries[0].cities[0].imageUrl}</div>
                                 <div class="card">                                
-                                    <div class="name">${data.[1].name}</div>
-                                    <div class="description">${data.[1].description}</div>
+                                    <div class="name">${data.countries[0].cities[0].name}</div>
+                                    <div class="description">${data.countries[0].cities[0].description}</div>
                                 </div>
                             </div>
                             <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.[2].imageUrl}</div>
+                                <div class="imageURL">${data.countries[0].cities[1].imageUrl}</div>
                                 <div class="card">                                
-                                    <div class="name">${data.[2].name}</div>
-                                    <div class="description">${data.[2].description}</div>
+                                    <div class="name">${data.countries[0].cities[1].name}</div>
+                                    <div class="description">${data.countries[0].cities[1].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.countries[1].cities[0].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.countries[1].cities[0].name}</div>
+                                    <div class="description">${data.countries[1].cities[0].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.countries[1].cities[1].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.countries[1].cities[1].name}</div>
+                                    <div class="description">${data.countries[1].cities[1].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.countries[2].cities[0].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.countries[2].cities[0].name}</div>
+                                    <div class="description">${data.countries[2].cities[0].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.countries[2].cities[1].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.countries[2].cities[1].name}</div>
+                                    <div class="description">${data.countries[2].cities[1].description}</div>
+                                </div>
+                            </div>            
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.temples[0].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.temples[0].name}</div>
+                                    <div class="description">${data.temples[0].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.temples[1].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.temples[1].name}</div>
+                                    <div class="description">${data.temples[1].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.beaches[0].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.beaches[0].name}</div>
+                                    <div class="description">${data.beaches[0].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.beaches[1].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.beaches[1].name}</div>
+                                    <div class="description">${data.beaches[1].description}</div>
                                 </div>
                             </div>'
                          
