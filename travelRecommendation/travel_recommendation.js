@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const locationSearch = document.querySelector('#locationSearch');
     const searchButton = document.querySelector('#searchButton');
     const clearButton = document.querySelector('#clearButton');
+    const templateContainer = document.querySelector('#templateContainer')
 
     // Ensure the main input exists before proceeding
     if (!locationSearch) {
@@ -40,5 +41,34 @@ document.addEventListener('DOMContentLoaded', () => {
 /*fetch('./travel_recommendation_api.json')
  .then(res => res.json())
  .then(data => {
+    const templateCard = document.querySelector('#template-card');
+    templateCard.innerHTML = `<h2>Weather in ${data.name}</h2>
+                            <p>Temperature: ${data.main.temp} &#8451;</p>
+                            <p>Weather: ${data.weather[0].description}</p>`
+
+                            <div class="location-cards" id="template-card">
+                            <div class="imageURL">${data.[0].imageUrl}</div>
+                            <div class="card">                                
+                                <div class="name">${data.[0].name}</div>
+                                <div class="description">${data.[0].description}</div>
+                            </div>
+                            </div>            
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.[1].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.[1].name}</div>
+                                    <div class="description">${data.[1].description}</div>
+                                </div>
+                            </div>
+                            <div class="location-cards" id="template-card">
+                                <div class="imageURL">${data.[2].imageUrl}</div>
+                                <div class="card">                                
+                                    <div class="name">${data.[2].name}</div>
+                                    <div class="description">${data.[2].description}</div>
+                                </div>
+                            </div>'
+                         
+                
+            
 }); Uncomment once I've figured out the full extent of the fetchAPI */
 
