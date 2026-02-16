@@ -3,33 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const locationSearch = document.querySelector('#locationSearch');
     const searchButton = document.querySelector('#searchButton');
     const clearButton = document.querySelector('#clearButton');
-    const templateContainer = document.querySelector('#templateContainer')
+    
 
     // Ensure the main input exists before proceeding
-    if (!locationSearch) {
-        console.warn("Element with ID 'locationSearch' not found.");
-        return;
-    }
+    if (searchButton && locationSearch) {
+        searchButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent form submission if inside a form
+            const query = locationSearch.value.trim(); // Remove extra spaces
 
-    // Handle typing in the search box
-    locationSearch.addEventListener('keyup', (e) => {
-        if (e.target && typeof e.target.value === 'string') {
-            const currentValue = e.target.value.trim().toLowerCase();
-            console.log("Search input:", currentValue);
-        }
-    });
-
-
-    // Optional: Handle search button click
-    if (searchButton) {
-        searchButton.addEventListener('click', () => {
-            const query = locationSearch.value.trim().toLowerCase();
-            console.log("Search button clicked with query:", query);
+            if (query) {
+                console.log("Search input:", query);
+                // TODO: Trigger your search logic here
+            } else {
+                console.warn("Search input is empty.");
+            }
         });
+    } else {
+        console.error("Search button or input field not found in DOM.");
     }
 
     // Optional: Handle clear button click
-    if (clearButton) {
+    if (clearButton && locationSearch) {
         clearButton.addEventListener('click', () => {
             locationSearch.value = '';
             console.log("Search input cleared.");
@@ -37,86 +31,99 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+fetchData();
 
+async function fetchData(){
+    try{
+        const res = await fetch('./travel_recommendation_api.json')
+ 
+        if(!res.ok){
+            throw new Error("Could not fetch resource");
+        }
+        const data = await res.json();
+
+        const templateCard = document.querySelector('#template-card');
+    templateCard.innerHTML =
+
+'<div>
+    <div class="imageURL">${data.countries.cities.imageUrl}</div>
+    <div class="card">                                
+        <div class="name">${data.countries.cities.name}</div>
+        <div class="description">${data.countries.cities.description}</div>
+    </div>
+</div>
+        
+<div>
+    <div class="imageURL">${data.temples.imageUrl}</div>
+    <div class="card">                                
+        <div class="name">${data.temples.name}</div>
+        <div class="description">${data.temples.description}</div>
+    </div>
+</div>
+
+<div>
+    <div class="imageURL">${data.beaches.imageUrl}</div>
+    <div class="card">                                
+        <div class="name">${data.beaches.name}</div>
+        <div class="description">${data.beaches.description}</div>
+    </div>
+</div>'})
+
+.catch(error => console.error('Error Posting Location Info',error));
+const locationInfo = document.querySelector('locationInfo');
+            locationInfo.innerHTML = `<p>Failed to fetch Locations. Please try again.</p>`;
+
+ document.querySelector('templateContainer').addEventListener('submit',fetchData());
+
+       
+
+    }
+    catch(error){
+        console.error(error);
+    }
+}
 
 /*fetch('./travel_recommendation_api.json')
- .then(res => res.json())
+ .then(res => {
+    if(!res.ok){
+        throw new Error("Could not fetch resource");
+    }
+    return res.json();
+ })
  .then(data => {
     const templateCard = document.querySelector('#template-card');
-    templateCard.innerHTML = `
+    templateCard.innerHTML =
 
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.countries[0].cities[0].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.countries[0].cities[0].name}</div>
-                                    <div class="description">${data.countries[0].cities[0].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.countries[0].cities[1].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.countries[0].cities[1].name}</div>
-                                    <div class="description">${data.countries[0].cities[1].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.countries[1].cities[0].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.countries[1].cities[0].name}</div>
-                                    <div class="description">${data.countries[1].cities[0].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.countries[1].cities[1].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.countries[1].cities[1].name}</div>
-                                    <div class="description">${data.countries[1].cities[1].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.countries[2].cities[0].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.countries[2].cities[0].name}</div>
-                                    <div class="description">${data.countries[2].cities[0].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.countries[2].cities[1].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.countries[2].cities[1].name}</div>
-                                    <div class="description">${data.countries[2].cities[1].description}</div>
-                                </div>
-                            </div>            
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.temples[0].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.temples[0].name}</div>
-                                    <div class="description">${data.temples[0].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.temples[1].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.temples[1].name}</div>
-                                    <div class="description">${data.temples[1].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.beaches[0].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.beaches[0].name}</div>
-                                    <div class="description">${data.beaches[0].description}</div>
-                                </div>
-                            </div>
-                            <div class="location-cards" id="template-card">
-                                <div class="imageURL">${data.beaches[1].imageUrl}</div>
-                                <div class="card">                                
-                                    <div class="name">${data.beaches[1].name}</div>
-                                    <div class="description">${data.beaches[1].description}</div>
-                                </div>
-                            </div>'
-                         
-                
-            
-}); Uncomment once I've figured out the full extent of the fetchAPI */
+'<div>
+    <div class="imageURL">${data.countries.cities.imageUrl}</div>
+    <div class="card">                                
+        <div class="name">${data.countries.cities.name}</div>
+        <div class="description">${data.countries.cities.description}</div>
+    </div>
+</div>
+        
+<div>
+    <div class="imageURL">${data.temples.imageUrl}</div>
+    <div class="card">                                
+        <div class="name">${data.temples.name}</div>
+        <div class="description">${data.temples.description}</div>
+    </div>
+</div>
+
+<div>
+    <div class="imageURL">${data.beaches.imageUrl}</div>
+    <div class="card">                                
+        <div class="name">${data.beaches.name}</div>
+        <div class="description">${data.beaches.description}</div>
+    </div>
+</div>'})
+
+.catch(error => console.error('Error Posting Location Info',error));
+const locationInfo = document.querySelector('locationInfo');
+            locationInfo.innerHTML = `<p>Failed to fetch Locations. Please try again.</p>`;
+
+ document.querySelector('templateContainer').addEventListener('submit',fetchData());
+
+
+*/
 

@@ -323,7 +323,7 @@ main h2{
   color: #fff;
 }
 
-.location-cards{    
+.location-cards > .div{    
     display: flex;
     flex-direction: column;
     margin-top: 60px;

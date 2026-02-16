@@ -19,7 +19,7 @@
                 </ul>                
                     <form>
                         <div class="search">                            
-                            <input class="search-input" type="search" id="locationSearch" placeholder="Enter a destination or keyword..." >
+                            <input type="search" class="search-input" id="locationSearch" placeholder="Enter a destination or keyword..." >
                             <span class="search-icon material-symbols-outlined">
                                 search
                             </span>
@@ -58,27 +58,15 @@
         
         <Template id="templateContainer">
             <div class="location-cards" id="template-card">
-                <div class="imageURL">${data.[0].imageUrl}</div>
+                <div class="imageURL"></div>
                 <div class="card">                                
-                    <div class="name">${data.[0].name}</div>
-                    <div class="description">${data.[0].description}</div>
-                </div>
-            </div>            
-            <div class="location-cards" id="template-card">
-                <div class="imageURL">${data.[1].imageUrl}</div>
-                <div class="card">                                
-                    <div class="name">${data.[1].name}</div>
-                    <div class="description">${data.[1].description}</div>
-                </div>
+                    <div class="name"></div>
+                    <div class="description"></div>
+                </div>            
             </div>
-            <div class="location-cards" id="template-card">
-                <div class="imageURL">${data.[2].imageUrl}</div>
-                <div class="card">                                
-                    <div class="name">${data.[2].name}</div>
-                    <div class="description">${data.[2].description}</div>
-                </div>
-            </div>
-        </template>            
+        </template>
+        
+        <div id="locationInfo"></div>
       
     </body>
 </html>
