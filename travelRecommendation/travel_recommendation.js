@@ -5,31 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearButton = document.querySelector('#clearButton');
     
 
-    // Ensure the main input exists before proceeding
-    if (searchButton && locationSearch) {
-        searchButton.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent form submission if inside a form
-            const query = locationSearch.value.trim(); // Remove extra spaces
-
-            if (query) {
-                console.log("Search input:", query);
-                // TODO: Trigger your search logic here
-            } else {
-                console.warn("Search input is empty.");
-            }
-        });
+    searchButton.addEventListener("submit", function() {
+       const query = locationSearch.value,trim().toLowerCase();
+       if (query) {
+        console.log("Searching for:", query);
+        // TODO: Add your search logic here
     } else {
-        console.error("Search button or input field not found in DOM.");
+        console.warn("Please enter a location.");
     }
 
-    // Optional: Handle clear button click
-    if (clearButton && locationSearch) {
-        clearButton.addEventListener('click', () => {
-            locationSearch.value = '';
-            console.log("Search input cleared.");
-        });
-    }
+     // Optional: Handle clear button click
+    clearButton.addEventListener('click', function () {
+        template.innerHTML = "";
+    });
 });
+    
 
 fetchData();
 
@@ -53,3 +43,5 @@ async function fetchData(){
         console.error(error);
     }
 }
+
+/* const template = document.querySelector("#template-card")*/
