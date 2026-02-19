@@ -35,95 +35,21 @@ fetchData();
 
 async function fetchData(){
     try{
+        
         const res = await fetch('./travel_recommendation_api.json')
  
         if(!res.ok){
             throw new Error("Could not fetch resource");
         }
         const data = await res.json();
+        const country = data.countries.cities;        
+        const temple = data.temples;        
+        const beach = data.beaches;
 
-        const templateCard = document.querySelector('#template-card');
-    templateCard.innerHTML =
-
-'<div>
-    <div class="imageURL">${data.countries.cities.imageUrl}</div>
-    <div class="card">                                
-        <div class="name">${data.countries.cities.name}</div>
-        <div class="description">${data.countries.cities.description}</div>
-    </div>
-</div>
-        
-<div>
-    <div class="imageURL">${data.temples.imageUrl}</div>
-    <div class="card">                                
-        <div class="name">${data.temples.name}</div>
-        <div class="description">${data.temples.description}</div>
-    </div>
-</div>
-
-<div>
-    <div class="imageURL">${data.beaches.imageUrl}</div>
-    <div class="card">                                
-        <div class="name">${data.beaches.name}</div>
-        <div class="description">${data.beaches.description}</div>
-    </div>
-</div>'})
-
-.catch(error => console.error('Error Posting Location Info',error));
-const locationInfo = document.querySelector('locationInfo');
-            locationInfo.innerHTML = `<p>Failed to fetch Locations. Please try again.</p>`;
-
- document.querySelector('templateContainer').addEventListener('submit',fetchData());
-
-       
-
+   
+      
     }
     catch(error){
         console.error(error);
     }
 }
-
-/*fetch('./travel_recommendation_api.json')
- .then(res => {
-    if(!res.ok){
-        throw new Error("Could not fetch resource");
-    }
-    return res.json();
- })
- .then(data => {
-    const templateCard = document.querySelector('#template-card');
-    templateCard.innerHTML =
-
-'<div>
-    <div class="imageURL">${data.countries.cities.imageUrl}</div>
-    <div class="card">                                
-        <div class="name">${data.countries.cities.name}</div>
-        <div class="description">${data.countries.cities.description}</div>
-    </div>
-</div>
-        
-<div>
-    <div class="imageURL">${data.temples.imageUrl}</div>
-    <div class="card">                                
-        <div class="name">${data.temples.name}</div>
-        <div class="description">${data.temples.description}</div>
-    </div>
-</div>
-
-<div>
-    <div class="imageURL">${data.beaches.imageUrl}</div>
-    <div class="card">                                
-        <div class="name">${data.beaches.name}</div>
-        <div class="description">${data.beaches.description}</div>
-    </div>
-</div>'})
-
-.catch(error => console.error('Error Posting Location Info',error));
-const locationInfo = document.querySelector('locationInfo');
-            locationInfo.innerHTML = `<p>Failed to fetch Locations. Please try again.</p>`;
-
- document.querySelector('templateContainer').addEventListener('submit',fetchData());
-
-
-*/
-

@@ -323,26 +323,29 @@ main h2{
   color: #fff;
 }
 
-.location-cards > .div{    
+.location-cards {    
     display: flex;
     flex-direction: column;
     margin-top: 60px;
     gap: 0.25rem;
 }
-
-.card{
-    width: 290px;
-    border-radius: 0px 0px 10px 10px;    
+.location-cards span {
+    width: 400px;    
+    border-radius: 10px 10px 10px 10px;    
     background-color: #ffffff;
     color: #011211;
-    margin-top: 0px;
+    margin-top: 80px;
     padding: 5px;    
 }
-.card > .name{
-    font-weight: bold;
+.location-cards img {
+    border-image-outset: inherit;
 }
-.card > .description{
-    font-size: 0.5rem;
+.location-cards span h1 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+.location-cards span p {
+    font-size: 0.75rem;
     color: #01121183;
 }
 
