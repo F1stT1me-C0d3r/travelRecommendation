@@ -1,47 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Get references to DOM elements
     const locationSearch = document.querySelector('#locationSearch');
     const searchButton = document.querySelector('#searchButton');
     const clearButton = document.querySelector('#clearButton');
-    
+    const templateCard = document.querySelector('#template-card');
 
-    searchButton.addEventListener("submit", function() {
-       const query = locationSearch.value,trim().toLowerCase();
-       if (query) {
-        console.log("Searching for:", query);
-        // TODO: Add your search logic here
-    } else {
-        console.warn("Please enter a location.");
+    if (!searchButton || !locationSearch || !templateCard) {
+        return;
     }
 
-     // Optional: Handle clear button click
-    clearButton.addEventListener('click', function () {
-        template.innerHTML = "";
-    });
-});
-    
-
-fetchData();
-
-async function fetchData(){
-    try{
-        
-        const res = await fetch('./travel_recommendation_api.json')
- 
-        if(!res.ok){
-            throw new Error("Could not fetch resource");
+    searchButton.addEventListener('click', async () => {
+        const query = locationSearch.value.trim().toLowerCase();
+        if (!query) {
+            templateCard.innerHTML = '';
+            return;
         }
-        const data = await res.json();
-        const country = data.countries.cities;        
-        const temple = data.temples;        
-        const beach = data.beaches;
 
-   
-      
+        const results = await fetchData(query);
+        renderResults(results, templateCard);
+    });
+
+    if (clearButton) {
+        clearButton.addEventListener('click', () => {
+            locationSearch.value = '';
+            templateCard.innerHTML = '';
+        });
     }
-    catch(error){
+});
+
+async function fetchData(query) {
+    try {
+        const res = await fetch('./travel_recommendation_api.json');
+
+        if (!res.ok) {
+            throw new Error('Could not fetch resource');
+        }
+
+        const data = await res.json();
+        const countryCities = data.countries.flatMap((country) => country.cities);
+        const temples = data.temples;
+        const beaches = data.beaches;
+
+        const allDestinations = [...countryCities, ...temples, ...beaches];
+
+        return allDestinations.filter((destination) => {
+            const nameMatch = destination.name.toLowerCase().includes(query);
+            const descriptionMatch = destination.description.toLowerCase().includes(query);
+            return nameMatch || descriptionMatch;
+        });
+    } catch (error) {
         console.error(error);
+        return [];
     }
 }
 
-/* const template = document.querySelector("#template-card")*/
+function renderResults(results, templateCard) {
+    if (!results.length) {
+        templateCard.innerHTML = '<p>No matching destinations found.</p>';
+        return;
+    }
+
+    templateCard.innerHTML = results
+        .map(
+            (result) => `
+                <span>
+                    <img src="${result.imageUrl}" alt="${result.name}" width="400" height="400">
+                    <h1>${result.name}</h1>
+                    <p>${result.description}</p>
+                </span>
+            `
+        )
+        .join('');
+}
